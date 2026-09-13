@@ -1,0 +1,38 @@
+[project]
+name = "ece2101l"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+  "pandas",
+  "matplotlib",
+  "scipy",
+  "ipykernel",
+  "PySpice"
+]
+
+[project.scripts]
+ece2101l = "ece2101l:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+pyspice-stubs = { path = "vendor/PySpice-stubs-1.5.0.6-source.zip" }
+
+[tool.basedpyright]
+reportUnusedCallResult = false
+reportUnknownMemberType = false
+
+[tool.ruff.lint]
+ignore = ["F821"]
+
+[dependency-groups]
+dev = [
+    "pyspice-stubs",
+]
