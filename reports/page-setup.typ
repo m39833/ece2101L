@@ -17,6 +17,8 @@
     // numbering: "1",
   )
 
+  show link: underline
+
   set text(
     font: ("Iosevka NF", "New Computer Modern"),
     // fill: white,

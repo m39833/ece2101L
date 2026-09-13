@@ -224,6 +224,9 @@ $
 $
 
 === Step 2. Simulate the circuit and confirm the result in Step 1
+#link(
+  "https://github.com/m39833/ece2101L/blob/main/simulations/lab_01/part_01.py",
+)[View simulation code]
 
 #figure(
   image("../simulations/figures/lab_01/part_01.png", width: 80%),
@@ -368,7 +371,11 @@ $
   boxed(i(t) = -8 + 20 e^(-50t)" A") "for" t>= 0 \
 $
 
+#pagebreak()
 === Step 2. Simulate the circuit and confirm the result in Step 1
+#link(
+  "https://github.com/m39833/ece2101L/blob/main/simulations/lab_01/part_02.py",
+)[View simulation code]
 
 
 #figure(
@@ -528,6 +535,9 @@ $
 with an initial voltage of approximately $qty("-3", "V")$ and a final steady-state voltage of approximately $qty("9", "V")$. The measured power-supply values of approximately $qty("-3.23", "V")$ (or $qty("-3.96", "V")$) and $qty("9.18", "V")$ are consistent with the scaled voltage sources used in the experiment. The experimental circuit therefore preserves the same first-order RC behavior and time constant as the original theoretical circuit, while operating at lower voltage levels.
 
 === Step 3. Simulate the circuit and confirm the result in Steps 1-2.
+#link(
+  "https://github.com/m39833/ece2101L/blob/main/simulations/lab_01/part_03.py",
+)[View simulation code]
 
 #figure(
   image(

@@ -211,7 +211,12 @@ thus, for $t >= 0$ :
   )
 ]
 
+#pagebreak()
+
 === Step 2. Simulate the circuit and confirm the results in Step 1.
+#link(
+  "https://github.com/m39833/ece2101L/blob/main/simulations/lab_02/part_01.py",
+)[View simulation code]
 
 #figure(
   image("../simulations/figures/lab_02/part_01.png"),
