@@ -43,19 +43,20 @@
     type(body) == content and body.func() == math.equation
   )
 
+  // Unwrap an equation so its original inline style doesn't persist.
   let body = if is-equation {
-    body
+    body.body
   } else {
-    math.equation(
-      block: false,
-      body,
-    )
+    body
   }
 
   rect(
     stroke: 0.8pt,
     inset: inset,
-    body,
+    math.equation(
+      block: false,
+      math.display(body),
+    ),
   )
 }
 

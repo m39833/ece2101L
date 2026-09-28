@@ -258,3 +258,125 @@
     )
   })
 }
+
+
+#let circular-current(
+  name,
+  center,
+  label: $i$,
+  direction: "cw",
+  spacing: 1em,
+  sweep: 270deg,
+  gap_angle: 180deg,
+  color: annotation-blue,
+  thickness: 0.8pt,
+  arrow_length: 0.25,
+  arrow_width: 0.14,
+) = {
+  assert(
+    direction in ("cw", "ccw"),
+    message: "direction must be \"cw\" or \"ccw\"",
+  )
+
+  assert(
+    sweep > 0deg and sweep < 360deg,
+    message: "sweep must be between 0deg and 360deg",
+  )
+
+  let label-name = name + "-label"
+  let styled-label = text(fill: color)[#label]
+
+  // Draw and name the label first so its anchors are available.
+  cetz.draw.content(
+    center,
+    styled-label,
+    anchor: "center",
+    name: label-name,
+  )
+
+  cetz.draw.get-ctx(ctx => {
+    let (
+      ctx,
+      label-center,
+      label-east,
+      label-west,
+      label-north,
+      label-south,
+      spacing-vector,
+    ) = cetz.coordinate.resolve(
+      ctx,
+      label-name + ".center",
+      label-name + ".east",
+      label-name + ".west",
+      label-name + ".north",
+      label-name + ".south",
+      (spacing, 0),
+      update: false,
+    )
+
+    let distance(a, b) = {
+      let dx = a.at(0) - b.at(0)
+      let dy = a.at(1) - b.at(1)
+      calc.sqrt(dx * dx + dy * dy)
+    }
+
+    let half-width = (
+      distance(
+        label-east,
+        label-west,
+      )
+        / 2
+    )
+
+    let half-height = (
+      distance(
+        label-north,
+        label-south,
+      )
+        / 2
+    )
+
+    // Bounding-circle radius of the label.
+    let label-radius = calc.sqrt(
+      half-width * half-width + half-height * half-height,
+    )
+
+    let label-gap = calc.abs(
+      spacing-vector.at(0),
+    )
+
+    let radius = label-radius + label-gap
+
+    // Keep the opening centered around gap_angle.
+    let gap-size = 360deg - sweep
+    let half-gap = gap-size / 2
+
+    let start-angle = if direction == "ccw" {
+      gap_angle + half-gap
+    } else {
+      gap_angle - half-gap
+    }
+
+    let delta-angle = if direction == "ccw" {
+      sweep
+    } else {
+      -sweep
+    }
+
+    cetz.draw.arc(
+      label-center,
+      radius: radius,
+      start: start-angle,
+      delta: delta-angle,
+      anchor: "origin",
+      stroke: color + thickness,
+      mark: (
+        end: ">",
+        fill: color,
+        stroke: color,
+        length: arrow_length,
+        width: arrow_width,
+      ),
+    )
+  })
+}

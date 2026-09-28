@@ -26,6 +26,7 @@
   )
 
   show math.equation.where(block: true): set text(size: 12pt)
+  set math.mat(delim: "[")
 
   set par(
     justify: true,
