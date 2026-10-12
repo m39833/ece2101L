@@ -169,7 +169,7 @@ $
 
 
 === Step 2. Simulate the circuit to confirm your results in Step 1.
-#code-link(5, 2)
+#code-link(6, 2)
 #figure(
   image("../simulations/figures/lab_06/part_02.png"),
   caption: [Comparison of the simulated inductor voltage and analytical steady-state response. The initial transient decays, and the simulated waveform approaches the analytical result.],
