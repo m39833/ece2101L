@@ -17,7 +17,6 @@ from PySpice.Unit import (
     u_Ω,
 )
 
-from ..components import add_timed_spdt
 from ..utils import mkfigpath
 
 TIME_TO_SWITCH = 500

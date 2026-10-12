@@ -23,7 +23,7 @@ build-backend = "uv_build"
 package = false
 
 [tool.uv.sources]
-pyspice-stubs = { path = "vendor/PySpice-stubs-1.5.0.6-source.zip" }
+pyspice-stubs = { path = "vendor/PySpice-stubs-1.5.0.8-source.zip" }
 
 [tool.basedpyright]
 reportUnusedCallResult = false

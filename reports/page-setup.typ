@@ -1,3 +1,5 @@
+#import "@preview/zero:0.7.1": set-group
+
 #let report(
   title: none,
   authors: (),
@@ -25,6 +27,7 @@
     // size: 11pt,
   )
 
+  set-group(separator: ",", threshold: 4)
   show math.equation.where(block: true): set text(size: 12pt)
   set math.mat(delim: "[")
 

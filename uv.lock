@@ -287,7 +287,7 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-dev = [{ name = "pyspice-stubs", path = "vendor/PySpice-stubs-1.5.0.6-source.zip" }]
+dev = [{ name = "pyspice-stubs", path = "vendor/PySpice-stubs-1.5.0.8-source.zip" }]
 
 [[package]]
 name = "executing"
@@ -800,12 +800,12 @@ wheels = [
 
 [[package]]
 name = "pyspice-stubs"
-version = "1.5.0.6"
-source = { path = "vendor/PySpice-stubs-1.5.0.6-source.zip" }
+version = "1.5.0.8"
+source = { path = "vendor/PySpice-stubs-1.5.0.8-source.zip" }
 dependencies = [
     { name = "typing-extensions" },
 ]
-sdist = { hash = "sha256:75589e6b0c8b77bfb5e682065afb900754d15853fc6d849ca39bc6ab30018ef0" }
+sdist = { hash = "sha256:8c52f2d056b2e678d598db96639d4be3c8653438f8525687a8528bad5c0de3b4" }
 
 [package.metadata]
 requires-dist = [{ name = "typing-extensions", specifier = ">=4.12" }]

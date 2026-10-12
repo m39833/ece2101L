@@ -60,6 +60,41 @@
   )
 }
 
+#let vbold(body) = {
+  math.bold(math.upright(body))
+}
+
+#let pad-2(number) = {
+  assert(
+    type(number) == int and number >= 0 and number <= 99,
+    message: "number must be an integer from 0 to 99",
+  )
+
+  let number = str(number)
+
+  if number.len() == 1 {
+    "0" + number
+  } else {
+    number
+  }
+}
+
+#let code-link(lab-number, part-number, text: "View simulation code") = {
+  let lab = pad-2(lab-number)
+  let part = pad-2(part-number)
+
+  let url = (
+    "https://github.com/m39833/ece2101L/blob/main/simulations"
+      + "/lab_"
+      + lab
+      + "/part_"
+      + part
+      + ".py"
+  )
+
+  link(url)[#text]
+}
+
 // currently typst doesnt have a way to get the rendered height of equations
 // workaround is to have presets for things like fractions to move/resize arrow
 #let cancelto(

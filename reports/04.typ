@@ -190,7 +190,7 @@ $
 
 for a series RLC configuration:
 $
-  alpha = R/2L, " " omega_(0) = 1/sqrt(L C) \
+  alpha = R/(2L), " " omega_(0) = 1/sqrt(L C) \
   alpha = qty("3", "1/s"), " " omega_(0) = 5 "rad/s" \
 $
 
@@ -299,8 +299,8 @@ $
 where
 $
   v_(s) = cases(
-    t = qty("12", "V")" for" t < 0,
-    t = qty("24", "V")" for" t > 0,
+    qty("12", "V")" for" t < 0,
+    qty("24", "V")" for" t > 0,
   )
 $
 
