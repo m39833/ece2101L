@@ -6,9 +6,14 @@ import numpy as np
 from matplotlib.figure import Figure
 from matplotlib.projections.polar import PolarAxes
 from matplotlib.typing import ColorType
+from PySpice.Probe.WaveForm import WaveForm
 
 SIMULATIONS_DIR = Path(__file__).resolve().parent
 FIGURES_DIR = SIMULATIONS_DIR / "figures"
+
+
+def phasor(waveform: WaveForm[np.complex128]):
+    return complex(np.asarray(waveform).item())
 
 
 def mkfigpath(source_file: str | Path, suffix: str = ".png") -> Path:

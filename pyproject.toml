@@ -30,7 +30,7 @@ reportUnusedCallResult = false
 reportUnknownMemberType = false
 
 [tool.ruff.lint]
-ignore = ["F821"]
+ignore = ["F821", "E741"]
 
 [dependency-groups]
 dev = [
