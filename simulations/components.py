@@ -2,14 +2,14 @@ from typing import TYPE_CHECKING, TypeAlias
 
 from PySpice.Spice.Netlist import Circuit, DeviceModel, Node
 from PySpice.Unit import u_us, u_V
-from PySpice.Unit.Unit import UnitValue, UnitValues
+from PySpice.Unit.Unit import UnitValue
 
 if TYPE_CHECKING:
     UnitValueType: TypeAlias = UnitValue[int] | UnitValue[float] | UnitValue[complex]
 else:
     UnitValueType = UnitValue
 
-SpiceValue: TypeAlias = str | int | float | complex | UnitValueType | UnitValues
+SpiceValue: TypeAlias = str | int | float | complex | UnitValueType
 
 
 def add_timed_spdt(
